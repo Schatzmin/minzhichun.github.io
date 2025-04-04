@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页管理后台</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        .admin-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .admin-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .admin-form input,
+        .admin-form textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .admin-form button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .admin-form button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h1>个人主页管理后台</h1>
+        
+        <div class="admin-section">
+            <h2>个人信息设置</h2>
+            <form class="admin-form" id="profileForm">
+                <input type="text" id="name" placeholder="你的名字" required>
+                <input type="text" id="title" placeholder="职业头衔" required>
+                <textarea id="about" placeholder="个人介绍" required></textarea>
+                <input type="text" id="image" placeholder="个人照片URL" required>
+                <button type="submit">保存个人信息</button>
+            </form>
+        </div>
+        
+        <div class="admin-section">
+            <h2>技能设置</h2>
+            <form class="admin-form" id="skillsForm">
+                <div id="skillsContainer">
+                    <!-- 技能项将在这里动态添加 -->
+                </div>
+                <button type="button" onclick="addSkill()">添加技能</button>
+                <button type="submit">保存技能</button>
+            </form>
+        </div>
+        
+        <div class="admin-section">
+            <h2>项目设置</h2>
+            <form class="admin-form" id="projectsForm">
+                <div id="projectsContainer">
+                    <!-- 项目项将在这里动态添加 -->
+                </div>
+                <button type="button" onclick="addProject()">添加项目</button>
+                <button type="submit">保存项目</button>
+            </form>
+        </div>
+        
+        <div class="admin-section">
+            <h2>联系方式设置</h2>
+            <form class="admin-form" id="contactForm">
+                <input type="email" id="email" placeholder="邮箱" required>
+                <input type="tel" id="phone" placeholder="电话" required>
+                <input type="text" id="location" placeholder="位置" required>
+                <button type="submit">保存联系方式</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html> 
